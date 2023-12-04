@@ -8,6 +8,7 @@
 
 
 def pascal_triangle(n):
+    """function return list of int"""
     if n <= 0:
         return []
     triangle = []
