@@ -20,13 +20,11 @@ def minOperations(n):
     int: minimum number of operations needed to get `n` 'H' characters. If `n`
          is impossible to achieve, return 0.
     """
-    if n <= 1:
-        return 0
-    dp = [0] * (n + 1)
-    for i in range(2, n + 1):
-        dp[i] = i
-        for j in range(i - 1, 0, -1):
-            if i % j == 0:
-                dp[i] = dp[j] + i // j
-                break
-    return dp[n]
+    result = 0
+    x = 2
+    while n > 1:
+        while n % x == 0:
+            result += x
+            n /= x
+        x += 1
+    return result
