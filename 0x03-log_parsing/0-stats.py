@@ -38,7 +38,7 @@ try:
             total_size += size
             if status in status_codes:
                 status_dict[status] += 1
-        except:
+        except (IndexError, ValueError):
             continue
 
         line_count += 1
